@@ -1,17 +1,14 @@
-package integer
+package binary
 
 import Detector
 import State
 
-class IntegerDetector: Detector(){
+class BinaryDetector: Detector() {
     override fun initialState(): State {
-        return LookingForFirstDigit(this)
-
+        return LookingForFirstChar(this)
     }
 
     override fun accepts(input: String): Boolean {
-        return currentState is Valid
+        return currentState is ContainsOne
     }
-
-
 }

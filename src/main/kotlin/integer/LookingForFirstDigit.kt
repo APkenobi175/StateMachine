@@ -1,7 +1,7 @@
 package integer
 
-import main.Detector
-import main.State
+import Detector
+import State
 
 class LookingForFirstDigit(detector: Detector): State(detector){
     override fun consume(character: String) {
@@ -9,7 +9,7 @@ class LookingForFirstDigit(detector: Detector): State(detector){
             detector.changeState(Valid(detector))
 
         } else{
-            detector.changeState(Invalid(detector))
+            detector.changeState(NotValid(detector))
         }
     }
 

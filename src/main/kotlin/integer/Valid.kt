@@ -1,12 +1,12 @@
 package integer
 
-import main.Detector
-import main.State
+import Detector
+import State
 
 class Valid(detector: Detector): State(detector) {
     override fun consume(character: String) {
         if (!"0123456789".contains(character)) {
-            detector.changeState(Invalid(detector))
+            detector.changeState(NotValid(detector))
 
         }
     }
