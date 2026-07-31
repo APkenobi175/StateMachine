@@ -14,3 +14,4 @@ class LookingForFirstDigit(detector: Detector): State(detector){
     }
 
 }
+
