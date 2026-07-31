@@ -10,6 +10,7 @@ class FloatingPointDetectorTest {
 
     @Test
     @DisplayName("Accepts valid floating point values")
+    // examples copied from canvas + some more
     fun acceptValidFloats(){
         val valid = listOf("1.0", "123.34", "0.200", "12312312.324523423")
         for (s in valid){
@@ -19,6 +20,7 @@ class FloatingPointDetectorTest {
 
     @Test
     @DisplayName("Rejects all Invalid Floating Point Values")
+    // examples copied from canvas + some more
     fun rejectNotValidFloats(){
         val invalid = listOf("", "123", "123.123.", "123.1a", "123.", "012.3", "0", ".", "1..2", "00.1", " ", " 1.0", " 1.0")
         for (s in invalid){
