@@ -1,11 +1,12 @@
 package integer
 
+import CharacterRules
 import Detector
 import State
 
 class LookingForFirstDigit(detector: Detector): State(detector){
     override fun consume(character: String) {
-        if("123456789".contains(character)){
+        if(CharacterRules.isNonZeroDigit(character)){
             detector.changeState(Valid(detector))
 
         } else{

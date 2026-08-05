@@ -8,7 +8,8 @@ class PasswordDetector: Detector() {
         return LookingForFirstChar(this)
     }
 
-    override fun accepts(input: String): Boolean {
-        return currentState is HasCapitalAndSpecialCleanEnd && input.length >=8 // make sure its long enough
+    // Length isn't tracked by the state machine per the assignment, so it's checked here.
+    override fun meetsAdditionalRequirements(input: String): Boolean {
+        return input.length >= 8
     }
 }

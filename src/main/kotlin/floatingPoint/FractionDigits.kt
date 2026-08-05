@@ -1,12 +1,15 @@
 package floatingPoint
 
+import CharacterRules
 import Detector
 import State
 
 class FractionDigits(detector: Detector): State(detector) {
+    override val isAccepting = true
+
     override fun consume(character: String) {
         when {
-            (!"0123456789".contains(character)) -> detector.changeState(NotValid(detector))
+            (!CharacterRules.isDigit(character)) -> detector.changeState(NotValid(detector))
             else -> {} // no op
         }
     }

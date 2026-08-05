@@ -8,7 +8,7 @@ abstract class Detector {
         for (ch in input) {
             currentState.consume(ch.toString())
         }
-        return accepts(input)
+        return currentState.isAccepting && meetsAdditionalRequirements(input)
     }
 
     fun changeState(state: State) {
@@ -16,5 +16,5 @@ abstract class Detector {
     }
 
     protected abstract fun initialState(): State
-    protected abstract fun accepts(input: String): Boolean
+    protected open fun meetsAdditionalRequirements(input: String): Boolean = true
 }

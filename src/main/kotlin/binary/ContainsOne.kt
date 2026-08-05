@@ -3,6 +3,8 @@ import Detector
 import State
 
 class ContainsOne(detector: Detector) : State(detector) {
+    override val isAccepting = true
+
     override fun consume(character: String) {
         when (character){
             "1" -> {} // self loop do nothing
